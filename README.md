@@ -5,7 +5,7 @@
 ![ML](https://img.shields.io/badge/Machine%20Learning-Advanced-red)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20|%20GCP%20|%20Azure-ff69b4)
 
-🔗 **Live Portfolio:** [soumyajit-jalua.github.io](https://yourusername.github.io/repo-name/)  
+🔗 **Live Portfolio:** [soumyajit-jalua.github.io](https://soumyajit-jalua-portfolio.vercel.app/)  
 📄 **Resume PDF:** [Download Here](Soumyajit1_resume.pdf)
 
 ## 🚀 Professional Highlights
