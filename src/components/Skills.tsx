@@ -1,123 +1,115 @@
+import { useState } from 'react';
+import AnimatedSection from './AnimatedSection';
+import { cn } from '@/lib/utils';
 
-import React, { useEffect, useRef } from "react";
-import { Code, Database, ChevronRight, Cpu, BrainCircuit, ServerIcon } from "lucide-react";
+type SkillCategory = 'all' | 'ml-ai' | 'programming' | 'data-engineering' | 'core';
 
 const Skills = () => {
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  
-  useEffect(() => {
-    const revealItems = document.querySelectorAll('.reveal-item');
-    
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observerRef.current?.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    revealItems.forEach(item => {
-      observerRef.current?.observe(item);
-    });
-    
-    return () => {
-      revealItems.forEach(item => {
-        observerRef.current?.unobserve(item);
-      });
-    };
-  }, []);
+  const [activeCategory, setActiveCategory] = useState<SkillCategory>('all');
 
-  const skillCategories = [
-    {
-      title: "Programming & Development",
-      icon: <Code className="h-6 w-6" />,
-      skills: ["Python", "JavaScript", "SQL", "C (Intermediate)", "HTML", "CSS", "REST APIs", "Git", "CI/CD", "Django", "Flask", "Laravel", "React.js"]
-    },
-    {
-      title: "Machine Learning & AI",
-      icon: <BrainCircuit className="h-6 w-6" />,
-      skills: ["EDA", "Deep Learning", "Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "GANs", "Time Series Analysis", "Regression Analysis", "NLP", "DBMS", "LLM", "Langchain", "RAG", "TensorFlow", "PyTorch", "Scikit-learn", "Keras", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Natural Language Processing", "Computer Vision", "Deep Learning"]
-    },
-    {
-      title: "Data Engineering & Analytics",
-      icon: <Database className="h-6 w-6" />,
-      skills: ["PostgreSQL", "MongoDB", "Pyspark", "Spark", "ETL", "Power BI", "Tableau", "Hadoop", "Apache Spark", "AWS (EC2, S3, Lambda, SageMaker)"]
-    },
-    {
-      title: "Core Competencies",
-      icon: <Cpu className="h-6 w-6" />,
-      skills: ["Machine Learning Model Development", "Statistical Analysis and Mathematical Modeling", "DAA", "DBMS", "Cloud computing", "Data Analysis", "Data Structures and Algorithms", "System Design and Architecture", "ETL Pipeline Development", "Data Privacy and GDPR Compliance"]
-    }
+  const categories = [
+    { id: 'all', name: 'All Skills' },
+    { id: 'ml-ai', name: 'ML & AI' },
+    { id: 'programming', name: 'Programming' },
+    { id: 'data-engineering', name: 'Data Engineering' },
+    { id: 'core', name: 'Core Competencies' },
   ];
 
+  const skills = [
+    { name: 'Python', category: 'programming' },
+    { name: 'JavaScript', category: 'programming' },
+    { name: 'SQL', category: 'programming' },
+    { name: 'C', category: 'programming' },
+    { name: 'HTML/CSS', category: 'programming' },
+    { name: 'React.js', category: 'programming' },
+    { name: 'Django', category: 'programming' },
+    { name: 'Flask', category: 'programming' },
+    { name: 'Laravel', category: 'programming' },
+    
+    { name: 'Deep Learning', category: 'ml-ai' },
+    { name: 'Supervised Learning', category: 'ml-ai' },
+    { name: 'Unsupervised Learning', category: 'ml-ai' },
+    { name: 'Reinforcement Learning', category: 'ml-ai' },
+    { name: 'GANs', category: 'ml-ai' },
+    { name: 'Time Series Analysis', category: 'ml-ai' },
+    { name: 'NLP', category: 'ml-ai' },
+    { name: 'Computer Vision', category: 'ml-ai' },
+    { name: 'TensorFlow', category: 'ml-ai' },
+    { name: 'PyTorch', category: 'ml-ai' },
+    { name: 'Scikit-learn', category: 'ml-ai' },
+    { name: 'Keras', category: 'ml-ai' },
+    { name: 'LLM', category: 'ml-ai' },
+    { name: 'Langchain', category: 'ml-ai' },
+    { name: 'RAG', category: 'ml-ai' },
+    
+    { name: 'PostgreSQL', category: 'data-engineering' },
+    { name: 'MongoDB', category: 'data-engineering' },
+    { name: 'Pyspark', category: 'data-engineering' },
+    { name: 'ETL', category: 'data-engineering' },
+    { name: 'Power BI', category: 'data-engineering' },
+    { name: 'Tableau', category: 'data-engineering' },
+    { name: 'Hadoop', category: 'data-engineering' },
+    { name: 'Apache Spark', category: 'data-engineering' },
+    { name: 'AWS', category: 'data-engineering' },
+    
+    { name: 'Machine Learning Models', category: 'core' },
+    { name: 'Statistical Analysis', category: 'core' },
+    { name: 'Mathematical Modeling', category: 'core' },
+    { name: 'Data Analysis', category: 'core' },
+    { name: 'Data Structures', category: 'core' },
+    { name: 'Algorithms', category: 'core' },
+    { name: 'System Design', category: 'core' },
+    { name: 'DBMS', category: 'core' },
+    { name: 'Cloud Computing', category: 'core' },
+  ];
+
+  const filteredSkills = activeCategory === 'all'
+    ? skills
+    : skills.filter(skill => skill.category === activeCategory);
+
   return (
-    <section id="skills" className="section-container relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-40 right-20 w-72 h-72 bg-primary/5 rounded-full filter blur-3xl -z-10"></div>
-      <div className="absolute bottom-20 left-40 w-72 h-72 bg-accent/5 rounded-full filter blur-3xl -z-10"></div>
-      
-      <div className="text-center mb-16">
-        <h2 className="section-title reveal-item">Technical Expertise</h2>
-        <p className="section-subtitle reveal-item">A comprehensive overview of my technical skills and competencies</p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        {skillCategories.map((category, index) => (
-          <div 
-            key={index}
-            className="reveal-item"
-            style={{ transitionDelay: `${0.2 * index}s` }}
-          >
-            <div className="card-glass p-8 h-full">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-full bg-primary/10 text-primary">
-                  {category.icon}
-                </div>
-                <h3 className="text-xl font-bold">{category.title}</h3>
-              </div>
-              
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, idx) => (
-                  <div 
-                    key={idx}
-                    className="px-3 py-1.5 bg-secondary text-secondary-foreground rounded-lg text-sm font-medium transition-all hover:bg-primary hover:text-primary-foreground"
-                  >
-                    {skill}
-                  </div>
-                ))}
-              </div>
-            </div>
+    <section className="py-16 bg-secondary/30" id="skills">
+      <div className="container-custom">
+        <AnimatedSection className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Expertise</h2>
+          <p className="text-foreground/70 max-w-2xl mx-auto">
+            A comprehensive set of technical skills accumulated through academic studies, 
+            professional experience, and project work.
+          </p>
+        </AnimatedSection>
+
+        <AnimatedSection className="mb-12">
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id as SkillCategory)}
+                className={cn(
+                  'px-4 py-2 rounded-full transition-all',
+                  activeCategory === category.id
+                    ? 'bg-primary text-primary-foreground shadow-md'
+                    : 'bg-background text-foreground/70 hover:bg-secondary'
+                )}
+              >
+                {category.name}
+              </button>
+            ))}
           </div>
-        ))}
-      </div>
-      
-      <div className="max-w-3xl mx-auto reveal-item">
-        <div className="card-glass p-8">
-          <h3 className="text-xl font-bold mb-6 text-center">Professional Development</h3>
-          
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <ChevronRight className="h-5 w-5 text-primary flex-shrink-0" />
-              <p className="text-muted-foreground">Currently pursuing M.Sc. in AI and Machine Learning at Indian Institute of Information Technology Lucknow</p>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <ChevronRight className="h-5 w-5 text-primary flex-shrink-0" />
-              <p className="text-muted-foreground">Continuously expanding expertise in generative AI models and large language models</p>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <ChevronRight className="h-5 w-5 text-primary flex-shrink-0" />
-              <p className="text-muted-foreground">Focused on developing scalable machine learning solutions for enterprise applications</p>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <ChevronRight className="h-5 w-5 text-primary flex-shrink-0" />
-              <p className="text-muted-foreground">Exploring advanced applications of computer vision in healthcare diagnostics</p>
-            </div>
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <div className="flex flex-wrap justify-center gap-3">
+            {filteredSkills.map((skill, index) => (
+              <div
+                key={`${skill.name}-${index}`}
+                className="skill-tag animate-fade-in"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                {skill.name}
+              </div>
+            ))}
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

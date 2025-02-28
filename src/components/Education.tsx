@@ -1,116 +1,88 @@
-
-import React, { useEffect, useRef } from "react";
-import { GraduationCap } from "lucide-react";
+import { Book, Calendar, MapPin } from 'lucide-react';
+import AnimatedSection from './AnimatedSection';
 
 const Education = () => {
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  
-  useEffect(() => {
-    const revealItems = document.querySelectorAll('.reveal-item');
-    
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observerRef.current?.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    revealItems.forEach(item => {
-      observerRef.current?.observe(item);
-    });
-    
-    return () => {
-      revealItems.forEach(item => {
-        observerRef.current?.unobserve(item);
-      });
-    };
-  }, []);
-
-  const education = [
+  const educationData = [
     {
-      degree: "M.Sc in Artificial Intelligence and Machine Learning",
-      institution: "Indian Institute of Information Technology Lucknow",
-      period: "August 2023 - June 2025",
-      location: "Lucknow, India",
+      institution: 'Indian Institute of Information Technology Lucknow',
+      degree: 'M.Sc. in Artificial Intelligence and Machine Learning',
+      period: 'August 2023 - June 2025',
+      location: 'Lucknow, India',
       courses: [
-        "Artificial intelligence", 
-        "Machine Learning", 
-        "Neural Networks", 
-        "Computer Vision", 
-        "NLP", 
-        "Cloud computing"
+        'Artificial Intelligence', 'Machine Learning','Deep Learning', 'Neural Networks',
+        'Computer Vision', 'NLP', 'Cloud Computing','DBMS', 'Data Structures & Algorithms'
       ],
-      gpa: "8.14"
+      gpa: '8.14'
     },
     {
-      degree: "B.Sc Mathematics (Honours)",
-      institution: "Panskura Banamali College",
-      period: "September 2020 - June 2023",
-      location: "Panskura, India",
+      institution: 'Panskura Banamali College',
+      degree: 'B.Sc. Mathematics (Honours)',
+      period: 'September 2020 - June 2023',
+      location: 'Panskura, India',
       courses: [
-        "Linear Algebra", 
-        "Probability Theory", 
-        "Statistical Analysis", 
-        "Computational Mathematics"
+        'Linear Algebra', 'Probability Theory', 'Statistical Analysis', 'Computational Mathematics'
       ],
-      gpa: "8.1"
+      gpa: '8.1'
     }
   ];
 
   return (
-    <section id="education" className="section-container relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute bottom-40 right-20 w-72 h-72 bg-accent/5 rounded-full filter blur-3xl -z-10"></div>
-      
-      <div className="text-center mb-16">
-        <h2 className="section-title reveal-item">Education</h2>
-        <p className="section-subtitle reveal-item">My academic journey and qualifications</p>
-      </div>
-      
-      <div className="max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {education.map((edu, index) => (
-            <div 
-              key={index}
-              className="reveal-item"
-              style={{ transitionDelay: `${0.2 * index}s` }}
+    <section className="py-16 bg-secondary/30" id="education">
+      <div className="container-custom">
+        <AnimatedSection className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Education</h2>
+          <p className="text-foreground/70 max-w-2xl mx-auto">
+            My academic journey that built the foundation for my expertise in AI and machine learning.
+          </p>
+        </AnimatedSection>
+
+        <div className="max-w-4xl mx-auto grid gap-8">
+          {educationData.map((edu, index) => (
+            <AnimatedSection 
+              key={edu.institution} 
+              className="bg-background rounded-xl p-6 shadow-sm"
+              animation="fade-in"
+              delay={index * 200}
             >
-              <div className="card-glass p-8 h-full">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="p-3 rounded-full bg-primary/10 text-primary">
-                    <GraduationCap className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">{edu.degree}</h3>
-                    <p className="text-muted-foreground">{edu.institution}</p>
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="md:w-1/4 flex items-center justify-center">
+                  <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Book size={32} className="text-primary/70" />
                   </div>
                 </div>
                 
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center pb-2 border-b border-border">
-                    <span className="text-sm text-muted-foreground">Period</span>
-                    <span className="font-medium">{edu.period}</span>
+                <div className="md:w-3/4">
+                  <h3 className="text-xl font-bold mb-2">{edu.institution}</h3>
+                  <p className="text-primary/70 font-medium mb-3">{edu.degree}</p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                    <div className="flex items-center text-sm text-foreground/60">
+                      <Calendar size={16} className="mr-2" />
+                      {edu.period}
+                    </div>
+                    <div className="flex items-center text-sm text-foreground/60">
+                      <MapPin size={16} className="mr-2" />
+                      {edu.location}
+                    </div>
                   </div>
                   
-                  <div className="flex justify-between items-center pb-2 border-b border-border">
-                    <span className="text-sm text-muted-foreground">Location</span>
-                    <span className="font-medium">{edu.location}</span>
-                  </div>
-                  
-                  <div className="flex justify-between items-center pb-2 border-b border-border">
-                    <span className="text-sm text-muted-foreground">CGPA</span>
-                    <span className="font-medium">{edu.gpa}</span>
+                  <div className="mb-4">
+                    <p className="text-sm font-medium mb-2">CGPA: {edu.gpa}</p>
+                    <div className="w-full bg-secondary rounded-full h-2">
+                      <div 
+                        className="bg-primary/70 h-2 rounded-full"
+                        style={{ width: `${(parseFloat(edu.gpa) / 10) * 100}%` }}
+                      />
+                    </div>
                   </div>
                   
                   <div>
-                    <span className="text-sm text-muted-foreground block mb-2">Relevant Coursework</span>
+                    <p className="text-sm font-medium mb-2">Relevant Coursework:</p>
                     <div className="flex flex-wrap gap-2">
-                      {edu.courses.map((course, idx) => (
+                      {edu.courses.map(course => (
                         <span 
-                          key={idx}
-                          className="px-2.5 py-0.5 bg-secondary text-secondary-foreground rounded-full text-xs font-medium"
+                          key={course} 
+                          className="px-3 py-1 text-xs rounded-full bg-secondary/80 text-secondary-foreground"
                         >
                           {course}
                         </span>
@@ -119,7 +91,7 @@ const Education = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

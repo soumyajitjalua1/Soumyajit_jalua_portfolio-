@@ -76,8 +76,8 @@ const Contact = () => {
     {
       icon: <Phone className="h-5 w-5" />,
       title: "Phone",
-      value: "+91 XXXXXXXXXX",
-      link: "tel:+91XXXXXXXXXX"
+      value: "+91 9732591634",
+      link: "tel:+919732591634"
     },
     {
       icon: <MapPin className="h-5 w-5" />,
@@ -130,7 +130,7 @@ const Contact = () => {
               <h4 className="font-medium mb-4">Connect on social media</h4>
               <div className="flex gap-4">
                 <a 
-                  href="https://github.com/" 
+                  href="https://github.com/soumyajitjalua1" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -139,7 +139,7 @@ const Contact = () => {
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com/" 
+                  href="https://www.linkedin.com/in/soumyajit-jalua-09a98a270/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"

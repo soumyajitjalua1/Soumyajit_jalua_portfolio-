@@ -1,108 +1,85 @@
+import { Link } from 'react-router-dom';
+import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
-import React from "react";
-import { Github, Linkedin, Mail, Code, Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-secondary/50 backdrop-blur-sm border-t border-border mt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2 space-y-4">
-            <h3 className="text-xl font-bold">Soumyajit Jalua</h3>
-            <p className="text-muted-foreground max-w-md">
-              AI & Machine Learning Engineer specializing in cutting-edge 
-              technologies and full-stack development solutions.
+    <footer className="bg-primary/5 py-12">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+          <div className="md:col-span-5">
+            <Link to="/" className="text-2xl font-display font-bold mb-4 inline-block">
+              SJ<span className="text-primary/70">.</span>
+            </Link>
+            <p className="text-foreground/70 mb-6 max-w-md">
+              Innovative AI/ML Engineer specializing in generative AI, predictive modeling, 
+              and full-stack development with a track record of delivering scalable, high-impact solutions.
             </p>
-            <div className="flex space-x-4 pt-2">
+            <div className="flex space-x-4">
               <a 
-                href="https://github.com/" 
+                href="https://github.com/soumyajitjalua1" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="GitHub"
+                className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary/10 transition-colors"
               >
-                <Github className="h-5 w-5" />
+                <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com/" 
+                href="https://www.linkedin.com/in/soumyajit-jalua-09a98a270/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="LinkedIn"
+                className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary/10 transition-colors"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin size={20} />
+              </a>
+              <a 
+                href="https://x.com/Soumyajitjalua" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary/10 transition-colors"
+              >
+                <Twitter size={20} />
               </a>
               <a 
                 href="mailto:soumyajitjalua@gmail.com" 
-                className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="Email"
+                className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary/10 transition-colors"
               >
-                <Mail className="h-5 w-5" />
+                <Mail size={20} />
               </a>
             </div>
           </div>
           
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
+          <div className="md:col-span-3 md:col-start-8">
+            <h3 className="font-display font-semibold text-lg mb-4">Quick Links</h3>
             <nav className="flex flex-col space-y-3">
-              <FooterLink href="#about">About Me</FooterLink>
-              <FooterLink href="#experience">Experience</FooterLink>
-              <FooterLink href="#education">Education</FooterLink>
-              <FooterLink href="#projects">Projects</FooterLink>
-              <FooterLink href="#skills">Skills</FooterLink>
-              <FooterLink href="#contact">Contact</FooterLink>
+              <Link to="/" className="text-foreground/70 hover:text-primary transition-colors">Home</Link>
+              <Link to="/about" className="text-foreground/70 hover:text-primary transition-colors">About</Link>
+              <Link to="/projects" className="text-foreground/70 hover:text-primary transition-colors">Projects</Link>
+              <Link to="/contact" className="text-foreground/70 hover:text-primary transition-colors">Contact</Link>
             </nav>
           </div>
           
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Technical Areas</h3>
-            <div className="flex flex-wrap gap-2">
-              {["Machine Learning", "AI", "Computer Vision", "NLP", "Data Science", "Full-Stack"].map((tag, index) => (
-                <span 
-                  key={index}
-                  className="px-2.5 py-1 bg-secondary rounded-full text-xs"
-                >
-                  {tag}
-                </span>
-              ))}
+          <div className="md:col-span-3">
+            <h3 className="font-display font-semibold text-lg mb-4">Contact</h3>
+            <div className="space-y-3">
+              <p className="text-foreground/70">
+                <a href="mailto:soumyajitjalua@gmail.com" className="hover:text-primary transition-colors">
+                  soumyajitjalua@gmail.com
+                </a>
+              </p>
+              <p className="text-foreground/70">Lucknow, India</p>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-border mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} Soumyajit Jalua. All rights reserved.
-          </p>
-          <div className="flex items-center mt-4 md:mt-0 text-sm text-muted-foreground">
-            <span className="flex items-center">
-              Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> and <Code className="h-4 w-4 mx-1" />
-            </span>
-          </div>
+        <div className="border-t border-border pt-8 text-center text-foreground/60 text-sm">
+          <p>© {currentYear} Soumyajit Jalua. All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
 };
-
-const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a 
-    href={href}
-    className="text-muted-foreground hover:text-foreground transition-colors"
-    onClick={(e) => {
-      e.preventDefault();
-      const section = document.querySelector(href);
-      if (section) {
-        window.scrollTo({
-          top: section.getBoundingClientRect().top + window.scrollY - 80,
-          behavior: "smooth",
-        });
-      }
-    }}
-  >
-    {children}
-  </a>
-);
 
 export default Footer;
