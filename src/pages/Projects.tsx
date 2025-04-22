@@ -27,13 +27,38 @@ const projectsData: Project[] = [
     githubUrl: "https://github.com/soumyajitjalua1/LLMAnywhere-Contextual-AI-Assistant",
   },
   {
+    title: "RAG-GPT",
+    description: "Developed an AI-powered chatbot offering versatile document interaction through offline document processing, real-time uploads, and summarization requests. Features include customizable GPT model settings, memory retention for personalized interactions, and an intuitive Gradio-based user interface.",
+    techStack: ["Python", "Langchain", "ChromaDB", "Gradio", "Vector Databases"],
+    image: "https://blogs.nvidia.com/wp-content/uploads/2023/11/Retrieval-Augmented-Generation-RAG-KV-1.jpg",
+    category: "ml-ai",
+    githubUrl: "https://github.com/soumyajitjalua1/rag-gpt",
+  },
+  {
+    title: " Deep Research AI Agentic System",
+    description: "Architected a modular multi-agent system for autonomous web research, query decomposition, and structured output synthesis with a Streamlit-based intuitive interface.",
+    techStack: [" Python", "LangChain", "LangGraph", "Streamlit", "OpenAI API", "Tavily Search API"],
+    image: "https://media.licdn.com/dms/image/v2/D5612AQG6JqQjCmfuAw/article-cover_image-shrink_600_2000/B56ZUUd1rfHsAQ-/0/1739805122139?e=2147483647&v=beta&t=33YHNH32RAz7XxpY4fDSKTuwLSkpNl5wIoK-VA3ZTB0",
+    category: "ml-ai",
+    githubUrl: "https://github.com/soumyajitjalua1/Deep-Research-AI-Agentic-System"
+  },
+  {
+    title: "Language Learning Chatbot",
+    description: "Developed an AI-driven resume screening system utilizing NLP for keyword extraction and Groq API for real-time analytics, enhancing recruitment efficiency by 40%.",
+    techStack: [" Python", "Streamlit", "LangChain", "OpenAI GPT-4", "SQLite"],
+    image: "https://www.syncfusion.com/blogs/wp-content/uploads/2020/01/tile.jpg",
+    category: "ml-ai",
+    githubUrl: "https://github.com/soumyajitjalua1/Language-Leaning-chatbot"
+  },
+
+
+  {
     title: "Advanced Medical Image Analysis System",
     description: "Implemented GAN-based cancer detection system achieving 90% accuracy in medical image analysis. Integrated Google Cloud Vision and Groq APIs for image processing and interactive medical consultations. Developed automated medical report generation system with actionable healthcare recommendations.",
     techStack: ["Python", "GANs", "Computer Vision", "Google Cloud Vision API", "Groq API", "Deep Learning"],
     image: "https://varteq.com/wp-content/uploads/2020/02/med-_imaging-1-680x360.png",
     category: "ml-ai",
-    githubUrl: "https://github.com/soumyajitjalua1/Cancers_prediction_Using_GAN",
-    liveUrl: "#"
+    githubUrl: "https://github.com/soumyajitjalua1/Cancers_prediction_Using_GAN"
   },
   {
     title: "Interactive Poker Gaming Platform",
@@ -41,7 +66,25 @@ const projectsData: Project[] = [
     techStack: ["React.js", "Node.js", "OpenCV", "WebRTC", "Socket.io"],
     image: "https://gamezy.com/wp-content/uploads/2023/08/21134458/Poker-Game-e1692606142669.jpg",
     category: "fullstack",
-    githubUrl: "#"
+    githubUrl: ""
+  },
+  {
+    title: "AI Chess Arena: Intelligent Chess Platform",
+    description: "AI Chess Arena is an advanced chess platform that integrates AI-powered analysis, personalized learning resources, and multiplayer capabilities to help players of all skill levels enhance their gameplay and strategic thinking",
+    techStack: ["React.js", "Node.js", "Groq API", "WebSockets", "MongoDB"],
+    image: "https://img.freepik.com/free-photo/view-chess-pieces-with-dramatic-mystical-background_23-2150844723.jpg",
+    category: "fullstack",
+    githubUrl: "https://github.com/soumyajitjalua1/chess-with-ai",
+    liveUrl: "https://chess-with-ai-agents.vercel.app/"
+  },
+  {
+    title: "Book my Trip: Travel Planning App",
+    description: "Developed a full-stack hotel and flight booking platform with secure authentication, real-time availability updates, and seamless booking management.",
+    techStack: ["React.js", "Node.js", "MongoDB", "Express.js"],
+    image: "https://as2.ftcdn.net/jpg/02/25/06/65/1000_F_225066596_oxfYvjQat3pPSFvrjplG8AUC3ZTmJxHy.jpg",
+    category: "fullstack",
+    githubUrl: "https://github.com/soumyajitjalua1/TravelApp",
+    liveUrl: "https://bookmytrip-lilac.vercel.app/"
   },
   {
     title: "Common Vulnerabilities and Exposures analysis using NLP",
@@ -59,7 +102,7 @@ const projectsData: Project[] = [
     image: "https://staticlearn.shine.com/l/m/images/blog/mobile/emerging_technologies_in_finance.webp",
     category: "fullstack",
     githubUrl: "https://github.com/soumyajitjalua1/Flutter-mobile-app",
-    liveUrl: "https://tokenflow.lovable.app/"
+    liveUrl: "https://github.com/soumyajitjalua1/Flutter-mobile-app/blob/main/Screenshot%202024-10-18%20194635.png"
   },
   {
     title: "ETL Data Pipeline System for weather data",
