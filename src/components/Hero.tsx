@@ -61,11 +61,11 @@ const Hero = () => {
                     <div className="grid grid-cols-3 gap-3">
                       <div className="text-center bg-background/20 backdrop-blur-sm p-3 rounded-lg">
                         <p className="text-sm text-foreground/70">Experience</p>
-                        <p className="text-lg font-semibold">1+ Years</p>
+                        <p className="text-lg font-semibold">2+ Years</p>
                       </div>
                       <div className="text-center bg-background/20 backdrop-blur-sm p-3 rounded-lg">
                         <p className="text-sm text-foreground/70">Projects</p>
-                        <p className="text-lg font-semibold">20+</p>
+                        <p className="text-lg font-semibold">40+</p>
                       </div>
                       <div className="text-center bg-background/20 backdrop-blur-sm p-3 rounded-lg">
                         <p className="text-sm text-foreground/70">M.Sc.</p>

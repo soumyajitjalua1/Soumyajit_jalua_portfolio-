@@ -1,12 +1,21 @@
 import { Briefcase, Calendar } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
+import { title } from 'process';
 
 const Experience = () => {
   const experiences = [
     {
+      title: 'Assistant Professor',
+      company: 'Saroj International University',
+      period: 'August 2025 - Present',
+      description: [
+        'Teaching AI, ML, DSA, NLP, and Data Analysis to undergraduate students; curriculum development and student engagement in emerging technologies.'
+      ]
+    },
+    {
       title: 'Full-Stack & ML Developer',
       company: 'XyleneTech',
-      period: 'November 2024 - Present',
+      period: 'February 2025 - July 2025',
       description: [
         'Developed interactive poker gaming platform featuring real-time video interaction through OpenCV integration, enhancing social gameplay experience and user engagement',
         'Built full-stack solution using React.js frontend and Node.js backend, creating a user-friendly design with intuitive interfaces for seamless player interaction and game management'

@@ -56,7 +56,7 @@ const projectsData: Project[] = [
     title: "Advanced Medical Image Analysis System",
     description: "Implemented GAN-based cancer detection system achieving 90% accuracy in medical image analysis. Integrated Google Cloud Vision and Groq APIs for image processing and interactive medical consultations. Developed automated medical report generation system with actionable healthcare recommendations.",
     techStack: ["Python", "GANs", "Computer Vision", "Google Cloud Vision API", "Groq API", "Deep Learning"],
-    image: "https://varteq.com/wp-content/uploads/2020/02/med-_imaging-1-680x360.png",
+    image: "https://bionetica.net/wp-content/uploads/2023/07/64cd30ca8fc49fb1285149e2_medical__imaginary-ai.webp",
     category: "ml-ai",
     githubUrl: "https://github.com/soumyajitjalua1/Cancers_prediction_Using_GAN"
   },
@@ -64,7 +64,7 @@ const projectsData: Project[] = [
     title: "Interactive Poker Gaming Platform",
     description: "Developed interactive poker gaming platform featuring real-time video interaction through OpenCV integration, enhancing social gameplay experience.",
     techStack: ["React.js", "Node.js", "OpenCV", "WebRTC", "Socket.io"],
-    image: "https://gamezy.com/wp-content/uploads/2023/08/21134458/Poker-Game-e1692606142669.jpg",
+    image: "https://data1.ibtimes.co.in/en/full/820480/indias-online-gaming-industry-faces-major-overhaul.png?h=450&l=50&t=40",
     category: "fullstack",
     githubUrl: ""
   },
