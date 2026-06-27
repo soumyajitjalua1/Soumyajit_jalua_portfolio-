@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
-interface AnimatedSectionProps {
+interface AnimatedSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  className?: string;
   animation?: 'fade-in' | 'fade-in-right' | 'fade-in-left';
   delay?: number;
 }
@@ -13,6 +12,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   className,
   animation = 'fade-in',
   delay = 0,
+  ...props
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -46,6 +46,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   return (
     <div
       ref={sectionRef}
+      {...props}
       className={cn(
         isVisible ? animation : 'opacity-0',
         'transition-all duration-700',
