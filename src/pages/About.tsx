@@ -42,16 +42,15 @@ const About = () => {
                     Soumyajit Jalua
                   </h1>
                   <p className="text-xl text-foreground/80 font-medium">
-                    AI & Machine Learning Engineer | Data Scientist
+                    Assistant Professor | AI Researcher | Educator
                   </p>
                   <p className="text-foreground/70">
-                    Innovative AI/ML Engineer with proven expertise in developing advanced machine learning solutions and 
-                    data-driven technologies. Specializing in generative AI, predictive modeling, and full-stack development 
-                    with 90%+ accuracy across diverse projects.
+                    Assistant Professor with a focus on AI, machine learning, and deep learning, combining
+                    classroom teaching with research in intelligent systems and applied innovation.
                   </p>
                   <p className="text-foreground/70">
-                    Demonstrated track record of translating complex technical challenges into scalable, 
-                    high-impact solutions using Python, SQL, JavaScript, and React.
+                    Experienced in mentoring students, supervising projects, and building practical solutions 
+                    that connect academic research with real-world problem solving.
                   </p>
                   <p className="text-foreground/70">
                     Currently pursuing M.Sc. in AI and Machine Learning, bringing cutting-edge academic 

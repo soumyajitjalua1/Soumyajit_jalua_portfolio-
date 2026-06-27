@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="md:col-span-7 space-y-8">
             <AnimatedSection animation="fade-in" delay={200}>
               <div className="inline-block px-3 py-1 rounded-full bg-secondary text-sm font-medium mb-4">
-                AI & Machine Learning Engineer
+                Assistant Professor | AI Researcher
               </div>
             </AnimatedSection>
             
@@ -22,9 +22,8 @@ const Hero = () => {
             
             <AnimatedSection animation="fade-in" delay={600}>
               <p className="text-lg md:text-xl text-foreground/80 max-w-xl">
-                Innovative AI/ML Engineer with expertise in developing advanced machine learning 
-                solutions and data-driven technologies. Specializing in generative AI, 
-                predictive modeling, and full-stack development.
+                Assistant Professor and AI researcher focused on machine learning, deep learning,
+                and mentoring students through research-driven teaching and applied innovation.
               </p>
             </AnimatedSection>
             
@@ -64,8 +63,8 @@ const Hero = () => {
                         <p className="text-lg font-semibold">2+ Years</p>
                       </div>
                       <div className="text-center bg-background/20 backdrop-blur-sm p-3 rounded-lg">
-                        <p className="text-sm text-foreground/70">Projects</p>
-                        <p className="text-lg font-semibold">40+</p>
+                        <p className="text-sm text-foreground/70">Research</p>
+                        <p className="text-lg font-semibold">3+</p>
                       </div>
                       <div className="text-center bg-background/20 backdrop-blur-sm p-3 rounded-lg">
                         <p className="text-sm text-foreground/70">M.Sc.</p>
